@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block content %}
+<h2 class="mb-4 text-primary">Sent Emails</h2>
+
+<div class="table-responsive table-wrap border border-primary-subtle">
+    <table class="table table-hover align-middle mb-0">
+        <thead class="table-primary">
+            <tr>
+                <th>ID</th>
+                <th>To</th>
+                <th>Subject</th>
+                <th>Body</th>
+                <th>Date</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for e in emails %}
+            <tr>
+                <td>{{ e["id"] }}</td>
+                <td>{{ e["recipient"] }}</td>
+                <td>{{ e["subject"] }}</td>
+                <td>{{ e["body"] }}</td>
+                <td>{{ e["created_at"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
+

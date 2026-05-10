@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h2 class="text-danger m-0">Spam</h2>
+    <a href="{{ url_for('spam_page') }}" class="btn btn-outline-danger rounded-pill px-4">Refresh</a>
+</div>
+<div class="table-responsive table-wrap border border-danger-subtle">
+    <table class="table table-hover align-middle mb-0">
+        <thead class="table-danger">
+            <tr><th>ID</th><th>From</th><th>Subject</th><th>Body</th><th>Score</th><th>Date</th></tr>
+        </thead>
+        <tbody>
+            {% for e in emails %}
+            <tr>
+                <td>{{ e["id"] }}</td>
+                <td>{{ e["sender"] }}</td>
+                <td>{{ e["subject"] }}</td>
+                <td>{{ e["body"] }}</td>
+                <td>{{ "%.2f"|format(e["score"]) }}</td>
+                <td>{{ e["created_at"] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
