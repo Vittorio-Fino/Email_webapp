@@ -134,5 +134,5 @@ SMTP_RECEIVER_PORT=8025
 
 ## Notes
 
-- Passwords are stored in plaintext in SQLite — this project is intended for educational purposes only and should not be deployed in production.
+- Passwords are stored in plaintext in SQLite — this project is intended for educational purposes only.
 - Gmail requires an [App Password](https://support.google.com/accounts/answer/185833) rather than your regular account password.
